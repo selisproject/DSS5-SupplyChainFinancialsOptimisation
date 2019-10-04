@@ -1,0 +1,2 @@
+# DSS5-SupplyChainFinancialsOptimisation
+The Supply Chain Finance DSS covers a set of solutions that optimizes cash flow by allowing businesses to lengthen their payment terms to their suppliers while providing the option for their large and SME suppliers to get paid early. This results in a win-win situation for the buyer and supplier. The buyer optimizes working capital, and the supplier generates additional operating cash flow, thus minimizing risk across the supply chain.
