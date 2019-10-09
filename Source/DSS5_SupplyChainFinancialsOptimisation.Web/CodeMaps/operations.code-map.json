@@ -1,0 +1,164 @@
+{
+  "Entries": {
+    "OP|Agreement|ApprovedFromEverybody": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.AgreementExtensions.ApprovedFromEverybody",
+      "Lines": {}
+    },
+    "OP|Agreement|Get_CurrentAgreementStatus": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.AgreementExtensions.Get_CurrentAgreementStatus",
+      "Lines": {}
+    },
+    "OP|CommercialAgreement|FindSupplierBuyers": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.CommercialAgreementExtensions.FindSupplierBuyers",
+      "Lines": {}
+    },
+    "OP|AgreementStatus|SortStatusDesc": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.AgreementStatusExtensions.SortStatusDesc",
+      "Lines": {}
+    },
+    "OP|SupplierStatistic|GetSupplierDataStatistics2": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.SupplierStatisticExtensions.GetSupplierDataStatistics2",
+      "Lines": {}
+    },
+    "OP|SupplierStatistic|GetSupplierStatistics": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.SupplierStatisticExtensions.GetSupplierStatistics",
+      "Lines": {}
+    },
+    "OP|SupplierStatistic|GetSupplierTurnover": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.SupplierStatisticExtensions.GetSupplierTurnover",
+      "Lines": {}
+    },
+    "OP|SupplierStatistic|Get5MostProfitableSuppliers": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.SupplierStatisticExtensions.Get5MostProfitableSuppliers",
+      "Lines": {}
+    },
+    "OP|DeliveryNote|FindDeliveryNote": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.DeliveryNoteExtensions.FindDeliveryNote",
+      "Lines": {}
+    },
+    "OP|IntermediaryUser|IsIntermediary": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.IntermediaryUserExtensions.IsIntermediary",
+      "Lines": {}
+    },
+    "OP|Investor|GetDomainFocusOptions": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.InvestorExtensions.GetDomainFocusOptions",
+      "Lines": {}
+    },
+    "OP|Investor|IsInvestor": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.InvestorExtensions.IsInvestor",
+      "Lines": {}
+    },
+    "OP|Invoice|FindAgreement": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.InvoiceExtensions.FindAgreement",
+      "Lines": {}
+    },
+    "OP|Order|FindAgreement": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.OrderExtensions.FindAgreement",
+      "Lines": {}
+    },
+    "OP|CreditNote|FindCreditNote": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.CreditNoteExtensions.FindCreditNote",
+      "Lines": {}
+    },
+    "OP|ProofOfDelivery|FindAgreement": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.ProofOfDeliveryExtensions.FindAgreement",
+      "Lines": {}
+    },
+    "OP|Supplier|IsSupplier": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.SupplierExtensions.IsSupplier",
+      "Lines": {}
+    },
+    "OP|DataQuality|DataQuality": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.DataQualityExtensions.DataQuality",
+      "Lines": {}
+    },
+    "OP|DataAvailability|DataAvailability": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.DataAvailabilityExtensions.DataAvailability",
+      "Lines": {}
+    },
+    "OP|Transaction|CalculateDataAvailability": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.TransactionExtensions.CalculateDataAvailability",
+      "Lines": {}
+    },
+    "OP|Transaction|Get_TransactionValue": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.TransactionExtensions.Get_TransactionValue",
+      "Lines": {}
+    },
+    "OP|Transaction|Get_FundedAmount": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.TransactionExtensions.Get_FundedAmount",
+      "Lines": {}
+    },
+    "OP|TurnoverStatistic|GetTurnoverStatisticsForSupplier": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.TurnoverStatisticExtensions.GetTurnoverStatisticsForSupplier",
+      "Lines": {}
+    },
+    "OP|TurnoverStatistic|GetTurnoverStatisticsPerMonth": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.TurnoverStatisticExtensions.GetTurnoverStatisticsPerMonth",
+      "Lines": {}
+    },
+    "OP|Utils|RaymetricsCSVParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.RaymetricsCSVParser",
+      "Lines": {}
+    },
+    "OP|Utils|LecosOrderCSVParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.LecosOrderCSVParser",
+      "Lines": {}
+    },
+    "OP|Utils|LecosDeliveryNoteParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.LecosDeliveryNoteParser",
+      "Lines": {}
+    },
+    "OP|Utils|LecosInvoiceParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.LecosInvoiceParser",
+      "Lines": {}
+    },
+    "OP|Utils|LecosCreditNoteParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.LecosCreditNoteParser",
+      "Lines": {}
+    },
+    "OP|Utils|LecosEUInvoiseParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.LecosEUInvoiseParser",
+      "Lines": {}
+    },
+    "OP|Utils|RaymetricsParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.RaymetricsParser",
+      "Lines": {}
+    },
+    "OP|Utils|RaymetricsInvoiceParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.RaymetricsInvoiceParser",
+      "Lines": {}
+    },
+    "OP|Utils|OrderStandardCSVParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.OrderStandardCSVParser",
+      "Lines": {}
+    },
+    "OP|Utils|InvoiceStandardCSVParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.InvoiceStandardCSVParser",
+      "Lines": {}
+    },
+    "OP|Utils|DeliveryNoteStandardCSVParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.DeliveryNoteStandardCSVParser",
+      "Lines": {}
+    },
+    "OP|Utils|CreditNoteStandardCSVParser": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.UtilsExtensions.CreditNoteStandardCSVParser",
+      "Lines": {}
+    },
+    "OP|MapPoint|InitiOrderMapPoints": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.MapPointExtensions.InitiOrderMapPoints",
+      "Lines": {}
+    },
+    "OP|MapPoint|ConsumeGoogleGeocode": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.MapPointExtensions.ConsumeGoogleGeocode",
+      "Lines": {}
+    },
+    "OP|FileData|GetAbsolutePath": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.FileDataExtensions.GetAbsolutePath",
+      "Lines": {}
+    },
+    "OP|FileData|GetThumbnail": {
+      "GeneratedSymbol": "DSS5_SupplyChainFinancialsOptimisation.BO.FileDataExtensions.GetThumbnail",
+      "Lines": {}
+    }
+  }
+}

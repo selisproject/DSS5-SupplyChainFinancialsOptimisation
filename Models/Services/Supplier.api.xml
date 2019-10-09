@@ -1,0 +1,212 @@
+<!--
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.-->
+
+<ExposedApi DateCreated="" Model_Name="Supplier" Model_Description="" Version="0.1.0">
+  <Operations>
+    <Operation Verb="Post" Path="Create" ReturnDataType="void" Name="Create" Description="Creates a new Supplier" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="Domain.Supplier" Required="True" Name="newSupplier" Description="" />
+      </Parameters>
+      <Code>function void Create(Domain.Supplier newSupplier)
+{
+	newSupplier.UserName = "";
+    newSupplier.Save();
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">function TimeSpan Expiration(
+	Domain.Supplier newSupplier
+)
+{ 
+	 return CommonLib.Utilities.CreateTimeSpan(0, 1, 0); 
+}</CachingOptions>
+    </Operation>
+    <Operation Verb="Get" Path="" ReturnDataType="Domain.Supplier" Name="Get" Description="Get an Supplier insance based on UserName" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function Domain.Supplier Get(string UserName) {
+    return Domain.Supplier.GetByKey(UserName);
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">function TimeSpan Expiration(
+	string UserName,
+	Domain.Supplier response
+)
+{ 
+	 return CommonLib.Utilities.CreateTimeSpan(0, 1, 0); 
+}</CachingOptions>
+    </Operation>
+    <Operation Verb="Get" Path="count" ReturnDataType="int" Name="Count" Description="Count all Suppliers" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters />
+      <Code>function int Count() {
+    return Domain.Supplier.GetAll().Length;
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">
+      </CachingOptions>
+    </Operation>
+    <Operation Verb="Get" Path="all" ReturnDataType="Collection[Domain.Supplier]" Name="GetAll" Description="Gets all Suppliers. Max pageSize is 50" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="int" Required="True" Name="pageSize" Description="" />
+        <Parameter DataType="int" Required="True" Name="pageIndex" Description="" />
+      </Parameters>
+      <Code>function Collection[Domain.Supplier] GetAll(int pageSize, int pageIndex) {
+    if (pageSize &gt; 50) {
+        pageSize = 50;
+    }
+    return Domain.Supplier.GetAll(pageIndex * pageSize, pageSize);
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">
+      </CachingOptions>
+    </Operation>
+    <Operation Verb="Post" Path="" ReturnDataType="void" Name="Save" Description="Saves a Supplier insance" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="Domain.Supplier" Required="True" Name="Supplier" Description="" />
+      </Parameters>
+      <Code>function void Save(Domain.Supplier Supplier) {
+    Supplier.Save();
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">
+      </CachingOptions>
+    </Operation>
+    <Operation Verb="Delete" Path="" ReturnDataType="void" Name="Delete" Description="Deletes a Supplier insance based on UserName" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function void Delete(string UserName) {
+    Domain.Supplier.GetByKey(UserName).Delete();
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">
+      </CachingOptions>
+    </Operation>
+    <Operation Verb="Get" Path="Find" ReturnDataType="Collection[Domain.Supplier]" Name="Find" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="True" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="usern" Description="" />
+      </Parameters>
+      <Code>function Collection[Domain.Supplier] ExposedOperation(string usern) {
+	return Domain.Supplier.Find(a=&gt; a.UserName == usern);
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">
+      </CachingOptions>
+    </Operation>
+    <Operation Verb="Get" Path="IsSupplier" ReturnDataType="bool" Name="IsSupplier" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="True" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="username" Description="" />
+      </Parameters>
+      <Code>function bool IsSupplier(string username)
+{
+Collection[Domain.Supplier] supplier = Domain.Supplier.Find(item=&gt;item.UserName == username);
+	
+	if (supplier.Length == 0) {
+	    return false;
+	} else {
+	    return supplier.First().IsSupplier();
+	}
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">function TimeSpan Expiration(
+	string username,
+	bool response
+)
+{ 
+	 return CommonLib.Utilities.CreateTimeSpan(0, 1, 0); 
+}</CachingOptions>
+    </Operation>
+    <Operation Verb="Post" Path="IsInRole" ReturnDataType="bool" Name="IsInRole" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="True" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="name" Description="" />
+        <Parameter DataType="Collection[string]" Required="True" Name="roles" Description="" />
+      </Parameters>
+      <Code>function bool IsInRole(string name, Collection[string] roles)
+{
+	Domain.Supplier supplier = Domain.Supplier.GetByKey(name);
+	
+	if (supplier == null) {
+	    DebugLib.Logger.WriteWarnLine("------------------1 is in role ");
+	    return false;
+	} else {
+	    
+	    foreach string role in roles {
+	    	if supplier.Roles.Any(a=&gt; a.Name == role) {
+	    	    DebugLib.Logger.WriteWarnLine("------------------2 "  + role);
+	    	    return true;
+	    	}
+	    }
+	    return false;
+	}
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">function TimeSpan Expiration(
+	string name,
+	Array[string] roles,
+	bool response
+)
+{ 
+	 return CommonLib.Utilities.CreateTimeSpan(0, 1, 0); 
+}</CachingOptions>
+    </Operation>
+  </Operations>
+  <DataContracts>
+    <DataContract Name="" Class="Domain.Supplier" BaseClass="ApplicationUser">
+      <Members>
+        <Member Name="UserName" DataType="string" Checked="True" />
+        <Member Name="PasswordHash" DataType="string" Checked="False" />
+        <Member Name="SecurityStamp" DataType="string" Checked="False" />
+        <Member Name="EmailConfirmed" DataType="bool" Checked="False" />
+        <Member Name="LockoutEnabled" DataType="bool" Checked="False" />
+        <Member Name="PhoneNumberConfirmed" DataType="bool" Checked="False" />
+        <Member Name="TwoFactorEnabled" DataType="bool" Checked="False" />
+        <Member Name="AccessFailedCount" DataType="int" Checked="False" />
+        <Member Name="Name" DataType="string" Checked="True" />
+        <Member Name="Email" DataType="string" Checked="True" />
+        <Member Name="PhoneNumber" DataType="string" Checked="False" />
+        <Member Name="LockoutEndDate" DataType="DateTime" Checked="False" />
+        <Member Name="SupplierId" DataType="int" Checked="False" />
+        <Member Name="Company" DataType="string" Checked="True" />
+        <Member Name="CompanyLogo" DataType="string" Checked="True" />
+        <Member Name="Business" DataType="string" Checked="False" />
+        <Member Name="CurrentAmount" DataType="string" Checked="False" />
+        <Member Name="AverageAmount" DataType="string" Checked="False" />
+        <Member Name="PercentageOfCreditNotes" DataType="string" Checked="False" />
+        <Member Name="PrimaryPhone" DataType="string" Checked="False" />
+        <Member Name="SecondaryPhone" DataType="string" Checked="False" />
+        <Member Name="Fax" DataType="string" Checked="False" />
+        <Member Name="WebSite" DataType="string" Checked="False" />
+        <Member Name="AcceptedPolicyTerms" DataType="bool" Checked="False" />
+        <Member Name="SupplierStatus" DataType="string" Checked="False" />
+        <Member Name="DomainFocus" DataType="string" Checked="False" />
+        <Member Name="EvaluationResult" DataType="string" Checked="False" />
+        <Member Name="EvaluationCountResult" DataType="int" Checked="False" />
+        <Member Name="AnnualTurnover" DataType="bool" Checked="False" />
+        <Member Name="BEnvironment" DataType="bool" Checked="False" />
+        <Member Name="PTerms" DataType="bool" Checked="False" />
+        <Member Name="Average" DataType="bool" Checked="False" />
+        <Member Name="InvoiceValue" DataType="bool" Checked="False" />
+        <Member Name="EqRatio" DataType="bool" Checked="False" />
+        <Member Name="SupplierBusinessStructureData" DataType="Domain.SupplierBusinessStructureData" Checked="False" />
+        <Member Name="SupplierReceivables" DataType="Domain.SupplierReceivables" Checked="False" />
+        <Member Name="SupplierContactInformation" DataType="Domain.SupplierContactInformation" Checked="False" />
+        <Member Name="SupplierTurnover" DataType="Domain.SupplierTurnover" Checked="False" />
+        <Member Name="SupplierExtraInformation" DataType="Domain.SupplierExtraInformation" Checked="False" />
+        <Member Name="FinancialStatements" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="EconomicEvaluations" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="BusinessPlans" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="PriorOutstandingBalances" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="OutstandingBalances" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="CurrentSituations" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="CurrentStatements" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="CurrentCredits" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="FactoringAgreements" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="CustomerAgreements" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="GeneralConstractuals" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="OrganizationalCharts" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="InvoicesForms" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="Declarations" DataType="Collection[Domain.SupplierUploads]" Checked="False" />
+        <Member Name="SupplierEvaluation" DataType="Domain.SupplierEvaluation" Checked="False" />
+        <Member Name="DataQuality" DataType="Domain.DataQuality" Checked="False" />
+        <Member Name="DataAvailability" DataType="Domain.DataAvailability" Checked="False" />
+        <Member Name="CommercialAgreements" DataType="Collection[Domain.CommercialAgreement]" Checked="False" />
+        <Member Name="Agreements" DataType="Collection[Domain.Agreement]" Checked="False" />
+        <Member Name="SupplierProducts" DataType="Collection[Domain.SupplierProduct]" Checked="False" />
+        <Member Name="Transactions" DataType="Collection[Domain.Transaction]" Checked="False" />
+        <Member Name="Prefix" DataType="string" Checked="False" />
+      </Members>
+    </DataContract>
+  </DataContracts>
+</ExposedApi>

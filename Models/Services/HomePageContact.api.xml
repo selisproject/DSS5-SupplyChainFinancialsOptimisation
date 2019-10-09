@@ -1,0 +1,62 @@
+<!--
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.-->
+
+<ExposedApi DateCreated="" Model_Name="HomePageContact" Model_Description="" Version="0.1.0">
+  <Operations>
+    <Operation Verb="Post" Path="HomePageContact" ReturnDataType="Domain.Contact" Name="HomePageContact" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="True" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="last_name" Description="" />
+        <Parameter DataType="string" Required="True" Name="email" Description="" />
+        <Parameter DataType="string" Required="True" Name="message" Description="" />
+      </Parameters>
+      <Code>function Domain.Contact HomePageContact(string last_name, string email, string message)
+{
+	Domain.Contact contact;
+	
+	contact.LastName = last_name;
+	contact.Email = email;
+	contact.Message = message;
+	
+    //Send e-mail
+	Collection[string] recipients;
+	recipients.Add("info@tome-finance.com");
+	CommonLib.EmailMessage em;
+    em.Subject = "Tome Finance User Contact";
+    em.IsBodyHtml = true;
+    em.Body = "&lt;p&gt;New message from&lt;/p&gt; &lt;p&gt;Last Name: " + 
+    	contact.LastName + "&lt;/p&gt; &lt;p&gt;E-mail: " + 
+    	contact.Email + "&lt;/p&gt; &lt;p&gt;Message: " + 
+    	contact.Message + "&lt;/p&gt; &lt;p&gt;&amp;nbsp;&lt;/p&gt;";
+    
+    em.To  = recipients.Distinct();
+    CommonLib.Utilities.SendEmailAsync(em);
+	
+	return contact;
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">function TimeSpan Expiration(
+	string last_name,
+	string email,
+	string message,
+	Domain.Contact response
+)
+{ 
+	 return CommonLib.Utilities.CreateTimeSpan(0, 1, 0); 
+}</CachingOptions>
+    </Operation>
+  </Operations>
+  <DataContracts>
+    <DataContract Name="" Class="Domain.Contact" BaseClass="">
+      <Members>
+        <Member Name="Id" DataType="int" Checked="False" />
+        <Member Name="FirstName" DataType="string" Checked="False" />
+        <Member Name="LastName" DataType="string" Checked="True" />
+        <Member Name="Represents" DataType="string" Checked="False" />
+        <Member Name="Company" DataType="string" Checked="False" />
+        <Member Name="Email" DataType="string" Checked="True" />
+        <Member Name="Phone" DataType="string" Checked="False" />
+        <Member Name="Message" DataType="string" Checked="True" />
+      </Members>
+    </DataContract>
+  </DataContracts>
+</ExposedApi>

@@ -1,0 +1,88 @@
+<!--
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.-->
+
+<ExposedApi DateCreated="" Model_Name="IntermediaryUser" Model_Description="" Version="">
+  <Operations>
+    <Operation Verb="Post" Path="Create" Name="Create" Description="Creates a new IntermediaryUser" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="Domain.IntermediaryUser" Required="True" Name="newIntermediaryUser" Description="" />
+      </Parameters>
+      <Code>function void Create(Domain.IntermediaryUser newIntermediaryUser) {
+    newIntermediaryUser.UserName = "";
+    newIntermediaryUser.Save();
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="" Name="Get" Description="Get an IntermediaryUser insance based on UserName" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function Domain.IntermediaryUser Get(string UserName) {
+    return Domain.IntermediaryUser.GetByKey(UserName);
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="count" Name="Count" Description="Count all IntermediaryUsers" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters />
+      <Code>function int Count() {
+    return Domain.IntermediaryUser.GetAll().Length;
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="all" Name="GetAll" Description="Gets all IntermediaryUsers. Max pageSize is 50" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="int" Required="True" Name="pageSize" Description="" />
+        <Parameter DataType="int" Required="True" Name="pageIndex" Description="" />
+      </Parameters>
+      <Code>function Collection[Domain.IntermediaryUser] GetAll(int pageSize, int pageIndex) {
+    if (pageSize &gt; 50) {
+        pageSize = 50;
+    }
+    return Domain.IntermediaryUser.GetAll(pageIndex * pageSize, pageSize);
+}</Code>
+    </Operation>
+    <Operation Verb="Post" Path="" Name="Save" Description="Saves a IntermediaryUser insance" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="Domain.IntermediaryUser" Required="True" Name="IntermediaryUser" Description="" />
+      </Parameters>
+      <Code>function void Save(Domain.IntermediaryUser IntermediaryUser) {
+    IntermediaryUser.Save();
+}</Code>
+    </Operation>
+    <Operation Verb="Delete" Path="" Name="Delete" Description="Deletes a IntermediaryUser insance based on UserName" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function void Delete(string UserName) {
+    Domain.IntermediaryUser.GetByKey(UserName).Delete();
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="IsIntermediary" Name="IsIntermediary" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="True" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function bool ExposedOperation(string username) {
+	return Domain.IntermediaryUser.Find(b=&gt; b.UserName == username).Length &gt; 0 &amp;&amp;
+		   Domain.IntermediaryUser.Find(b=&gt; b.UserName == username).First().IsIntermediary();
+		  
+}		  </Code>
+    </Operation>
+  </Operations>
+  <DataContracts>
+    <DataContract Name="" Class="Domain.IntermediaryUser" BaseClass="ApplicationUser">
+      <Members>
+        <Member Name="UserName" DataType="string" Checked="True" />
+        <Member Name="PasswordHash" DataType="string" Checked="False" />
+        <Member Name="SecurityStamp" DataType="string" Checked="False" />
+        <Member Name="EmailConfirmed" DataType="bool" Checked="False" />
+        <Member Name="LockoutEnabled" DataType="bool" Checked="False" />
+        <Member Name="PhoneNumberConfirmed" DataType="bool" Checked="False" />
+        <Member Name="TwoFactorEnabled" DataType="bool" Checked="False" />
+        <Member Name="AccessFailedCount" DataType="int" Checked="False" />
+        <Member Name="Name" DataType="string" Checked="True" />
+        <Member Name="Email" DataType="string" Checked="True" />
+        <Member Name="PhoneNumber" DataType="string" Checked="True" />
+        <Member Name="LockoutEndDate" DataType="DateTime" Checked="False" />
+        <Member Name="Intermediary" DataType="Domain.Intermediary" Checked="False" />
+      </Members>
+    </DataContract>
+  </DataContracts>
+</ExposedApi>

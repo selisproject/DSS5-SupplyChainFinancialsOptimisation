@@ -1,0 +1,115 @@
+<!--
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.-->
+
+<ExposedApi DateCreated="" Model_Name="Investor" Model_Description="" Version="">
+  <Operations>
+    <Operation Verb="Post" Path="Create" Name="Create" Description="Creates a new Investor" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="Domain.Investor" Required="True" Name="newInvestor" Description="" />
+      </Parameters>
+      <Code>function void Create(Domain.Investor newInvestor) {
+    newInvestor.UserName = "";
+    newInvestor.Save();
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="" Name="Get" Description="Get an Investor insance based on UserName" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function Domain.Investor Get(string UserName) {
+    return Domain.Investor.GetByKey(UserName);
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="count" Name="Count" Description="Count all Investors" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters />
+      <Code>function int Count() {
+    return Domain.Investor.GetAll().Length;
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="all" Name="GetAll" Description="Gets all Investors. Max pageSize is 50" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="int" Required="True" Name="pageSize" Description="" />
+        <Parameter DataType="int" Required="True" Name="pageIndex" Description="" />
+      </Parameters>
+      <Code>function Collection[Domain.Investor] GetAll(int pageSize, int pageIndex) {
+    if (pageSize &gt; 50) {
+        pageSize = 50;
+    }
+    return Domain.Investor.GetAll(pageIndex * pageSize, pageSize);
+}</Code>
+    </Operation>
+    <Operation Verb="Post" Path="" Name="Save" Description="Saves a Investor insance" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="Domain.Investor" Required="True" Name="Investor" Description="" />
+      </Parameters>
+      <Code>function void Save(Domain.Investor Investor) {
+    Investor.Save();
+}</Code>
+    </Operation>
+    <Operation Verb="Delete" Path="" Name="Delete" Description="Deletes a Investor insance based on UserName" AllowAnonymousUsers="False" AllowAllAuthenticated="True" EnableAccessLog="False" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="UserName" Description="" />
+      </Parameters>
+      <Code>function void Delete(string UserName) {
+    Domain.Investor.GetByKey(UserName).Delete();
+}</Code>
+    </Operation>
+    <Operation Verb="Get" Path="ExposedOperation" Name="Find" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="True" AllowPermisssions="">
+      <Parameters>
+        <Parameter DataType="string" Required="True" Name="name" Description="" />
+      </Parameters>
+      <Code>function Collection[Domain.Investor] ExposedOperation(string name) {
+	return Domain.Investor.Find(a=&gt; a.UserName == name);
+}</Code>
+    </Operation>
+  </Operations>
+  <DataContracts>
+    <DataContract Name="" Class="Domain.Investor" BaseClass="ApplicationUser">
+      <Members>
+        <Member Name="UserName" DataType="string" Checked="True" />
+        <Member Name="PasswordHash" DataType="string" Checked="False" />
+        <Member Name="SecurityStamp" DataType="string" Checked="False" />
+        <Member Name="EmailConfirmed" DataType="bool" Checked="False" />
+        <Member Name="LockoutEnabled" DataType="bool" Checked="False" />
+        <Member Name="PhoneNumberConfirmed" DataType="bool" Checked="False" />
+        <Member Name="TwoFactorEnabled" DataType="bool" Checked="False" />
+        <Member Name="AccessFailedCount" DataType="int" Checked="False" />
+        <Member Name="Name" DataType="string" Checked="True" />
+        <Member Name="Email" DataType="string" Checked="True" />
+        <Member Name="PhoneNumber" DataType="string" Checked="False" />
+        <Member Name="LockoutEndDate" DataType="DateTime" Checked="False" />
+        <Member Name="InvestorId" DataType="int" Checked="False" />
+        <Member Name="PrimaryPhone" DataType="string" Checked="False" />
+        <Member Name="SecondaryPhone" DataType="string" Checked="False" />
+        <Member Name="Fax" DataType="string" Checked="False" />
+        <Member Name="WebSite" DataType="string" Checked="False" />
+        <Member Name="Company" DataType="string" Checked="True" />
+        <Member Name="ContactPerson" DataType="string" Checked="False" />
+        <Member Name="Logo" DataType="string" Checked="False" />
+        <Member Name="SupervisingAuthority" DataType="string" Checked="False" />
+        <Member Name="RegistrationNo" DataType="string" Checked="False" />
+        <Member Name="DomainFocus" DataType="string" Checked="False" />
+        <Member Name="TurnOver" DataType="decimal" Checked="False" />
+        <Member Name="VatNumber" DataType="string" Checked="False" />
+        <Member Name="AddressTwo" DataType="string" Checked="False" />
+        <Member Name="AddressOne" DataType="string" Checked="False" />
+        <Member Name="ManagingDirector" DataType="string" Checked="False" />
+        <Member Name="TargetMarket" DataType="string" Checked="False" />
+        <Member Name="CustomerSizeFrom" DataType="string" Checked="False" />
+        <Member Name="CustomerSizeTo" DataType="string" Checked="False" />
+        <Member Name="LocalJurisdiction" DataType="string" Checked="False" />
+        <Member Name="CommercialRegNo" DataType="string" Checked="False" />
+        <Member Name="OtherMinRequirements" DataType="string" Checked="False" />
+        <Member Name="CRR" DataType="bool" Checked="False" />
+        <Member Name="UploadCompliance" DataType="string" Checked="False" />
+        <Member Name="OtherMemberships" DataType="string" Checked="False" />
+        <Member Name="OtherDomainFocus" DataType="string" Checked="False" />
+        <Member Name="InvestorStatus" DataType="string" Checked="False" />
+        <Member Name="IAFC" DataType="bool" Checked="False" />
+        <Member Name="Agreements" DataType="Collection[Domain.Agreement]" Checked="False" />
+        <Member Name="AnnualTransactionVolumes" DataType="Collection[Domain.AnnualTransactionVolume]" Checked="False" />
+      </Members>
+    </DataContract>
+  </DataContracts>
+</ExposedApi>

@@ -1,0 +1,107 @@
+<!--
+Copyright (c) CLMS. All rights reserved.
+Licensed under the AGPL-3.0 license. See LICENSE file in the project root for full license information.-->
+
+<ExposedApi DateCreated="" Model_Name="AlgorithmCheck" Model_Description="" Version="0.1.0">
+  <Operations>
+    <Operation Verb="Post" Path="AlgorithmCheck" ReturnDataType="Domain.AlgorithmCheck" Name="AlgorithmCheck" Description="" AllowAnonymousUsers="True" AllowAllAuthenticated="True" EnableAccessLog="False" ResponseSample="" RequestSample="" AllowPermisssions="" ApplicationTags="">
+      <Parameters>
+        <Parameter DataType="decimal" Required="True" Name="annual_turnover" Description="" />
+        <Parameter DataType="string" Required="True" Name="b2b" Description="" />
+        <Parameter DataType="string" Required="True" Name="b2c" Description="" />
+        <Parameter DataType="decimal" Required="True" Name="payment_term_of_receivable" Description="" />
+        <Parameter DataType="decimal" Required="True" Name="average_of_payment_terms" Description="" />
+        <Parameter DataType="decimal" Required="True" Name="average_invoice_value" Description="" />
+        <Parameter DataType="decimal" Required="True" Name="equity_ratio" Description="" />
+      </Parameters>
+      <Code>function Domain.AlgorithmCheck AlgorithmCheck(decimal annual_turnover, string b2b, string b2c, decimal payment_term_of_receivable, decimal average_of_payment_terms, decimal average_invoice_value, decimal equity_ratio)
+{
+Domain.AlgorithmCheck algorithmCheck;
+	algorithmCheck.AnnualTurnover = annual_turnover;
+	algorithmCheck.B2B = b2b;
+	algorithmCheck.B2C = b2c;
+	algorithmCheck.PaymentTerm = payment_term_of_receivable;
+	algorithmCheck.AveragePaymentTerm = average_of_payment_terms;
+	algorithmCheck.AverageInvoiceValue = average_invoice_value;
+	algorithmCheck.EquityRatio = equity_ratio;
+	
+	int count = 0;
+	
+	//Evaluation Algorithm
+	if algorithmCheck.AnnualTurnover &gt;= 500000 {
+	    count = count + 1;
+	}
+	if algorithmCheck.B2B.ToLower() == "yes" {
+		count = count + 1;    
+	}
+	if algorithmCheck.PaymentTerm &lt;= 160 {
+	    count = count + 1;
+	}
+	if algorithmCheck.AveragePaymentTerm &gt;=30 &amp;&amp; algorithmCheck.AveragePaymentTerm &lt;=120 {
+	    count = count + 1;
+	}
+	if algorithmCheck.AverageInvoiceValue &gt;= 300 {
+	    count = count + 1;
+	}
+	if algorithmCheck.EquityRatio &gt;=10  {
+	    count = count + 1;
+	}
+	
+	algorithmCheck.AlgorithmCount = count;
+	
+	if count  == 6 {
+        algorithmCheck.Result = "Very High Performance";
+    }
+    elseif count == 5 {
+    	algorithmCheck.Result = "High Performance";
+    }
+    elseif count == 4 {
+    	algorithmCheck.Result = "Medium Performance";
+    }
+	elseif count == 3 {
+		algorithmCheck.Result = "Borderline Performance";
+	}
+	elseif count == 2 {
+		algorithmCheck.Result = "Low Performance";
+	}
+	elseif count == 1 {
+		algorithmCheck.Result = "Very Low Performance";
+	}
+	else {
+		algorithmCheck.Result = "--";
+	}
+	
+	return algorithmCheck;
+}</Code>
+      <CachingOptions CachePerUser="false" OperationIsCached="false" OverrideDefaultCachingSettings="false" UseCustomExpirationMethod="false" ExpirationDays="0" ExpirationHours="0" ExpirationMinutes="3" ExpirationSeconds="0" ExpirationMilliseconds="0" CacheMode="None">function TimeSpan Expiration(
+	decimal annual_turnover,
+	string b2b,
+	string b2c,
+	decimal payment_term_of_receivable,
+	decimal average_of_payment_terms,
+	decimal average_invoice_value,
+	decimal equity_ratio,
+	Domain.AlgorithmCheck response
+)
+{ 
+	 return CommonLib.Utilities.CreateTimeSpan(0, 1, 0); 
+}</CachingOptions>
+    </Operation>
+  </Operations>
+  <DataContracts>
+    <DataContract Name="" Class="Domain.AlgorithmCheck" BaseClass="">
+      <Members>
+        <Member Name="Id" DataType="int" Checked="False" />
+        <Member Name="AnnualTurnover" DataType="decimal" Checked="False" />
+        <Member Name="B2B" DataType="string" Checked="False" />
+        <Member Name="B2C" DataType="string" Checked="False" />
+        <Member Name="PaymentTerm" DataType="decimal" Checked="False" />
+        <Member Name="AveragePaymentTerm" DataType="decimal" Checked="False" />
+        <Member Name="AverageInvoiceValue" DataType="decimal" Checked="False" />
+        <Member Name="EquityRatio" DataType="decimal" Checked="False" />
+        <Member Name="AlgorithmCount" DataType="int" Checked="False" />
+        <Member Name="Result" DataType="string" Checked="True" />
+      </Members>
+    </DataContract>
+  </DataContracts>
+</ExposedApi>

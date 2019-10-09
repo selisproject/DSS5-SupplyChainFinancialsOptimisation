@@ -1,0 +1,70 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSS5_SupplyChainFinancialsOptimisation.Web", "DSS5_SupplyChainFinancialsOptimisation.Web\DSS5_SupplyChainFinancialsOptimisation.Web.csproj", "{743613f8-c6de-4ad6-ab2d-1b21d7c1f412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSS5_SupplyChainFinancialsOptimisation.Backend", "Projects\Domain\POCO\DSS5_SupplyChainFinancialsOptimisation.Backend.csproj", "{96cf3446-b17c-4ba7-9282-ef2df74024e1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSS5_SupplyChainFinancialsOptimisation.BoTesting.Tests", "Projects\Domain\Tests\DSS5_SupplyChainFinancialsOptimisation.BoTesting.Tests.csproj", "{bf1af5ff-08cc-4d86-a6c0-8c3cee27bf2b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSS5_SupplyChainFinancialsOptimisation.Services", "Projects\ExposedServices\DSS5_SupplyChainFinancialsOptimisation.Services.csproj", "{1f1d14de-3dde-4a60-8009-d9f943ff9a07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalStructs", "Projects\ExternalStructs\ExternalStructs.csproj", "{dcf51725-799b-4f62-b3b9-75f81c5ad73b}"
+EndProject
+
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Model", "Domain Model", "{409E8C30-2326-440B-8266-D8C5947D1C4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Services", "External Services", "{8F74606C-391A-405C-BFDA-7C4A81CC46E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exposed Services", "Exposed Services", "{9F74606C-391A-405C-BFDA-7C4A81CC46E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1340A2A9-A104-4F90-B706-8BAA88F88888}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{A99F7A41-08AC-4FF3-BFF5-53AFDEE59820}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{F82408FD-0183-44D6-8785-6A03E1E7ABBA}"
+	ProjectSection(SolutionItems) = preProject
+	
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{743613f8-c6de-4ad6-ab2d-1b21d7c1f412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{743613f8-c6de-4ad6-ab2d-1b21d7c1f412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{743613f8-c6de-4ad6-ab2d-1b21d7c1f412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{743613f8-c6de-4ad6-ab2d-1b21d7c1f412}.Release|Any CPU.Build.0 = Release|Any CPU
+{96cf3446-b17c-4ba7-9282-ef2df74024e1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{96cf3446-b17c-4ba7-9282-ef2df74024e1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{96cf3446-b17c-4ba7-9282-ef2df74024e1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{96cf3446-b17c-4ba7-9282-ef2df74024e1}.Release|Any CPU.Build.0 = Release|Any CPU
+{bf1af5ff-08cc-4d86-a6c0-8c3cee27bf2b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{bf1af5ff-08cc-4d86-a6c0-8c3cee27bf2b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{bf1af5ff-08cc-4d86-a6c0-8c3cee27bf2b}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{bf1af5ff-08cc-4d86-a6c0-8c3cee27bf2b}.Release|Any CPU.Build.0 = Release|Any CPU
+{1f1d14de-3dde-4a60-8009-d9f943ff9a07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{1f1d14de-3dde-4a60-8009-d9f943ff9a07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{1f1d14de-3dde-4a60-8009-d9f943ff9a07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{1f1d14de-3dde-4a60-8009-d9f943ff9a07}.Release|Any CPU.Build.0 = Release|Any CPU
+{dcf51725-799b-4f62-b3b9-75f81c5ad73b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+{dcf51725-799b-4f62-b3b9-75f81c5ad73b}.Debug|Any CPU.Build.0 = Debug|Any CPU
+{dcf51725-799b-4f62-b3b9-75f81c5ad73b}.Release|Any CPU.ActiveCfg = Release|Any CPU
+{dcf51725-799b-4f62-b3b9-75f81c5ad73b}.Release|Any CPU.Build.0 = Release|Any CPU
+
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{WEBSITE_GUID} = {D7619C41-5C0E-4CF0-9BC1-1B9C14C2457C}
+		{743613f8-c6de-4ad6-ab2d-1b21d7c1f412} = {}
+{96cf3446-b17c-4ba7-9282-ef2df74024e1} = {409E8C30-2326-440B-8266-D8C5947D1C4B}
+{bf1af5ff-08cc-4d86-a6c0-8c3cee27bf2b} = {409E8C30-2326-440B-8266-D8C5947D1C4B}
+{1f1d14de-3dde-4a60-8009-d9f943ff9a07} = {9F74606C-391A-405C-BFDA-7C4A81CC46E8}
+{dcf51725-799b-4f62-b3b9-75f81c5ad73b} = {8F74606C-391A-405C-BFDA-7C4A81CC46E9}
+
+		{F82408FD-0183-44D6-8785-6A03E1E7ABBA} = {A99F7A41-08AC-4FF3-BFF5-53AFDEE59820}
+	EndGlobalSection	
+EndGlobal
